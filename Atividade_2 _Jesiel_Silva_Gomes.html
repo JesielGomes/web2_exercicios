@@ -1,0 +1,111 @@
+<html>
+<head>
+<script>
+function Carro()
+{
+
+< !-- Escolhi fazer o exemplo de herança de propriedades com o modelo de objeto 
+para Carros, como base, utilizei a demonstração feita em aula como estrutura base.
+Tive a brilhante ideia de querer exibir o conteúdo no alert, porém estava saindo 
+apenas o conteúdo default vazio que estabeleci nas variáveis.
+Fiz um "gato" com o Set e consegui exbir no alert. Porém, só depois percebi que 
+a exibição era apenas no console.log (que já consegui ajustar)-- >
+
+  var Motorista = "Sem nome";
+  var Marca = "Sem marca";
+  var Modelo = "Sem modelo";
+  var Ano = "Sem ano";
+  var Placa = "Sem placa";
+
+  this.SetMotorista = SetMotorista;
+  this.SetMarca = SetMarca;
+  this.SetModelo = SetModelo;
+  this.SetAno = SetAno;
+  this.SetPlaca = SetPlaca;
+
+  this.ShowMotorista = DisplayMotorista;
+  this.ShowMarca = DisplayMarca;
+  this.ShowModelo = DisplayModelo;
+  this.ShowAno = DisplayAno;
+  this.ShowPlaca = DisplayPlaca;
+
+  function DisplayMotorista(){
+    alert("MOTORISTA: " + Motorista);
+  console.log(Motorista);
+  }
+
+  function DisplayMarca(){
+    alert("MARCA: " + Marca);
+  console.log(Marca);
+  }
+
+  function DisplayModelo(){
+    alert("MODELO: " + Modelo);
+  console.log(Modelo);
+  }
+
+  function DisplayAno(){
+    alert("ANO: " + Ano);
+  console.log(Ano);
+  }
+
+  function DisplayPlaca(){
+    alert("PLACA: " + Placa);
+  console.log(Placa);
+  }
+
+  function SetMotorista(_motorista) {
+    Marca = _motorista;
+  }
+
+  function SetMarca(_marca) {
+    Marca = _marca;
+  }
+
+  function SetModelo(_modelo) {
+      Modelo = _modelo;
+  }
+
+  function SetAno(_ano) {
+    Ano = _ano;
+  }
+
+  function SetPlaca(_placa) {
+      Placa = _placa;
+  }
+
+  }
+
+  function Motorista() {
+            Carro.call(this);
+            this.nome = " ";
+  }
+
+  Motorista.prototype = Object.create(Carro.prototype);  
+
+  var motorista = new Motorista ();
+  motorista.SetMotorista ("JESIEL");
+  motorista.ShowMotorista ();
+	
+  var carro = new Carro();
+  carro.SetMarca("Fiat");
+  carro.SetModelo("Mobi");
+  carro.SetAno("2021");
+  carro.SetPlaca("AJK-2022");
+
+  carro.ShowMarca();
+  carro.ShowModelo();
+  carro.ShowAno();
+  carro.ShowPlaca();
+
+</script>
+</head>
+<body>
+<center><br><br>
+	    <img src="https://cms.fatecrl.edu.br/uploads/portal/portal-arquivo-2018-10-19-03-10-2991034.jpg" width="200"><br>
+	    <b>Atividade 2 - Desenvolvimento Web II - (DW2A4)</b><br>         
+            <b>Professor:</b> Antonio Deusany de Carvalho Junior<br>
+            <b>Nome:</b> Jesiel Silva Gomes - <b>Prontuário:</b> SP3039081<br>
+            </center>
+</body>
+</html>
